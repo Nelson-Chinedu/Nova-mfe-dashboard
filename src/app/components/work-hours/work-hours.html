@@ -1,0 +1,37 @@
+<div class="bg-white border border-[#dadedf] h-105 p-4 rounded-xl flex flex-col">
+  <div>
+    <p class="text-[16px] font-bold text-[#0c1420]">Member Work Hours</p>
+  </div>
+  <div class="flex justify-between items-center my-4">
+    <div class="flex items-center gap-2">
+      <p class="flex items-end gap-0 font-bold text-2xl">
+        120
+        <span class="font-medium text-lg text-[#777a83]">h</span>
+      </p>
+      <p class="flex items-end gap-0 font-bold text-2xl">
+        54
+        <span class="font-medium text-lg text-[#777a83]">m</span>
+      </p>
+    </div>
+    <div class="flex items-center gap-4">
+      <div class="flex items-center gap-1">
+        <div class="bg-[#3B5BDB] w-3 h-3 rounded-sm"></div>
+        <p class="text-xs">Work Time</p>
+      </div>
+      <div class="flex items-center gap-1">
+        <div class="bg-[#F8B4B4] w-3 h-3 rounded-sm"></div>
+        <p class="text-xs">Over Time</p>
+      </div>
+    </div>
+  </div>
+  <div class="flex-1 relative">
+    <canvas
+      baseChart
+      [data]="chartData"
+      [options]="chartOptions"
+      [type]="chartType"
+      [plugins]="chartPlugins"
+    >
+    </canvas>
+  </div>
+</div>
