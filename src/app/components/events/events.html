@@ -1,0 +1,68 @@
+<div class="bg-white border border-[#dadedf] h-105 p-4 rounded-xl">
+  <p class="text-[16px] font-bold text-[#0c1420]">What's on in January?</p>
+  <div class="bg-[#f4f5f7] rounded-lg grid grid-cols-2 p-1 my-4">
+    <div
+      class="px-2 py-1 text-center cursor-pointer"
+      [ngClass]="{ 'bg-white rounded-lg': eventType() === 'time_off' }"
+      (click)="eventTypeActiveTab('time_off')"
+    >
+      <p
+        class="text-sm"
+        [ngClass]="eventType() === 'time_off' ? 'text-[#3c41e9]' : 'text-[#777a83]'"
+      >
+        Time Off
+      </p>
+    </div>
+    <div
+      class="text-center py-1 px-2 cursor-pointer"
+      [ngClass]="{ 'bg-white rounded-lg': eventType() === 'birthday' }"
+      (click)="eventTypeActiveTab('birthday')"
+    >
+      <p
+        class="text-sm"
+        [ngClass]="eventType() === 'birthday' ? 'text-[#3c41e9]' : 'text-[#777a83]'"
+      >
+        Birthday
+      </p>
+    </div>
+  </div>
+  @if (eventType() == 'time_off') {
+    @for (item of [0, 1, 2, 4, 5]; track $index; let last = $last) {
+      <div
+        class="flex items-start gap-2 py-2"
+        [class.border-b]="!last"
+        [class.border-[#dadedf]]="!last"
+        [class.mb-2]="!last"
+      >
+        <img
+          src="https://fastly.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U"
+          alt=""
+          class="w-9 h-9 rounded-full"
+        />
+        <div>
+          <p class="text-sm font-medium">Elenorie Maggie</p>
+          <p class="text-xs text-[#777a83]">UI/UX Designer &bull; Sick Leave</p>
+        </div>
+      </div>
+    }
+  } @else {
+    @for (item of [0, 1, 2, 4, 5]; track $index; let last = $last) {
+      <div
+        class="flex items-start gap-2 py-2"
+        [class.border-b]="!last"
+        [class.border-[#dadedf]]="!last"
+        [class.mb-2]="!last"
+      >
+        <img
+          src="https://fastly.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U"
+          alt=""
+          class="w-9 h-9 rounded-full"
+        />
+        <div>
+          <p class="text-sm font-medium">Elenorie Maggie</p>
+          <p class="text-xs text-[#777a83]">Jan 16th</p>
+        </div>
+      </div>
+    }
+  }
+</div>

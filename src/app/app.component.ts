@@ -1,16 +1,15 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { LucideAngularModule } from 'lucide-angular';
+import { DashboardSummary } from './components/dashboard-summary/dashboard-summary';
+import { WorkHours } from './components/work-hours/work-hours';
+import { Events } from './components/events/events';
+import { Employees } from './components/employees/employees';
+import { Schedule } from './components/schedule/schedule';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
-  template: `
-    <div style="padding: 20px; border: 2px solid #4A90E2; border-radius: 8px;">
-      <h1>🚀 Nova Dashboard</h1>
-      <p>Angular 21 Microfrontend is now active.</p>
-      <router-outlet></router-outlet>
-    </div>
-  `,
+  imports: [LucideAngularModule, DashboardSummary, WorkHours, Events, Employees, Schedule],
+  templateUrl: './app.html',
 })
 export class AppComponent {}
